@@ -8,5 +8,9 @@ namespace Comic.Controllers
 {
     public class ComicBookController:Controller
     {
+        public string detail()
+        {
+            return "hi from mvc";
+        }
     }
 }
