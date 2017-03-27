@@ -1,5 +1,19 @@
 ﻿@{
     Layout = null;
+    var title1 = "spiderman hsamen ";
+    var movienum = 800;
+    var desc = "<p>Final issue! Witness the final hours of Doctor Octopus' life and his one, last, great act of revenge! Even if Spider-Man survives... <strong>will Peter Parker?</strong></p>";
+
+
+        var artists = new string[]
+    {
+        "Script: Dan Slott",
+        "Pencils: Humberto Ramos",
+        "Inks: Victor Olazaba",
+        "Colors: Edgar Delgado",
+        "Letters: Chris Eliopoulos"
+    };
+    
 }
 
 <!DOCTYPE html>
@@ -11,7 +25,19 @@
 </head>
 <body>
     <div>
-    <h1>hello world of mvc</h1>
+    <h1>@title1</h1>
+        <h2>
+            movie number : @movienum
+        </h2>
+        <h4>Description:</h4>
+        <div>
+            @Html.Raw(desc)
+        </div>
+
+        <h5>
+            Artists
+        </h5>
+        <div> @Html.Raw(artists)</div>
     </div>
 </body>
 </html>
