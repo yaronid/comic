@@ -5,15 +5,15 @@
     var desc = "<p>Final issue! Witness the final hours of Doctor Octopus' life and his one, last, great act of revenge! Even if Spider-Man survives... <strong>will Peter Parker?</strong></p>";
 
 
-        var artists = new string[]
-    {
-        "Script: Dan Slott",
-        "Pencils: Humberto Ramos",
-        "Inks: Victor Olazaba",
-        "Colors: Edgar Delgado",
-        "Letters: Chris Eliopoulos"
-    };
-    
+    var artists = new string[]
+{
+    "script: dan slott",
+    "pencils: humberto ramos",
+    "inks: victor olazaba",
+    "colors: edgar delgado",
+    "letters: chris eliopoulos"
+};
+
 }
 
 <!DOCTYPE html>
@@ -33,11 +33,21 @@
         <div>
             @Html.Raw(desc)
         </div>
+        @if (artists.Length>0)
+        {
+        <h5> Artists  </h5>
+        <div>
+            <ul>
+                @foreach (var artist in artists)
+            {
+                    <li>@artist</li>
 
-        <h5>
-            Artists
-        </h5>
-        <div> @Html.Raw(artists)</div>
+                }
+            </ul>
+        </div>
+
+        }
+       
     </div>
 </body>
 </html>
