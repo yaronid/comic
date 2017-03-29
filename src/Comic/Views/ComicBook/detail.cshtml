@@ -1,18 +1,6 @@
 ﻿@{
     Layout = null;
-    var title1 = "spiderman hsamen ";
-    var movienum = 800;
-    var desc = "<p>Final issue! Witness the final hours of Doctor Octopus' life and his one, last, great act of revenge! Even if Spider-Man survives... <strong>will Peter Parker?</strong></p>";
-
-
-    var artists = new string[]
-{
-    "script: dan slott",
-    "pencils: humberto ramos",
-    "inks: victor olazaba",
-    "colors: edgar delgado",
-    "letters: chris eliopoulos"
-};
+    
 
 }
 
@@ -25,22 +13,22 @@
 </head>
 <body>
     <div>
-    <h1>@title1</h1>
+    <h1>@ViewBag.Title1</h1>
         <h2>
-            movie number : @movienum
+            movie number : @ViewBag.Movienum
         </h2>
         <h4>Description:</h4>
         <div>
-            @Html.Raw(desc)
+            @Html.Raw(ViewBag.Desc)
         </div>
-        @if (artists.Length>0)
+        @if (ViewBag.Artists.Length>0)
         {
         <h5> Artists  </h5>
         <div>
             <ul>
-                @foreach (var artist in artists)
+                @foreach (var Artist in ViewBag.Artists)
             {
-                    <li>@artist</li>
+                    <li>@Artist</li>
 
                 }
             </ul>
