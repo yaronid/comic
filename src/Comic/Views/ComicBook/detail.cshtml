@@ -1,25 +1,35 @@
-﻿@{
+﻿@model Comic.Models.ComicBook
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Comic Book Detail";
+    ViewBag.Title ="Comic Book Detail";
 
 }
 
-    <h1>@ViewBag.Title1</h1>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+    <h1>@Model.DisplayText</h1>
         <h2>
-            movie number : @ViewBag.Movienum
+            movie number : @Model.IssuNumber
         </h2>
         <h4>Description:</h4>
         <div>
-            @Html.Raw(ViewBag.Desc)
+            @Html.Raw(Model.DescriptionHtml)
         </div>
-        @if (ViewBag.Artists.Length>0)
+        @if (Model.Artists.Length>0)
         {
         <h5> Artists  </h5>
         <div>
             <ul>
-                @foreach (var Artist in ViewBag.Artists)
+                @foreach (var Artist in Model.Artists)
             {
-                    <li>@Artist</li>
+                    <li>@Artist.Role: @Artist.Name</li>
 
                 }
             </ul>
@@ -27,4 +37,6 @@
 
         }
        
-    
+    </div>
+</body>
+</html>
