@@ -13,5 +13,15 @@ namespace Comic.Models
         public string DescriptionHtml { get; set; }
         public Artist[] Artists { get; set; }
         public bool Favoirie { get; set; }
+        public string DisplayText
+        {
+            get { return SeriesTitle + " #" + IssuNumber; }
+        }
+
+        //series-title-issuenumber.jpg
+        public string CoverImageFileName
+        {
+            get { return SeriesTitle.Replace(" ", "-").ToLower() + "-" + IssuNumber + ".jpg"; }
+        }
     }
 }
